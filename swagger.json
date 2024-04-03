@@ -1,0 +1,64 @@
+{
+  "swagger": "2.0",
+  "basePath": "/",
+  "paths": {
+    "/hello/{name}": {
+      "parameters": [
+        {
+          "description": "Your name",
+          "name": "name",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "get_hello_world",
+        "tags": [
+          "default"
+        ]
+      },
+      "post": {
+        "responses": {
+          "403": {
+            "description": "Not Authorized"
+          }
+        },
+        "operationId": "post_hello_world",
+        "tags": [
+          "default"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "HelloWorld API",
+    "version": "1.0",
+    "description": "A helloworld API"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "default",
+      "description": "Default namespace"
+    }
+  ],
+  "responses": {
+    "ParseError": {
+      "description": "When a mask can't be parsed"
+    },
+    "MaskError": {
+      "description": "When any error occurs on mask"
+    }
+  }
+}
